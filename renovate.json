@@ -2,12 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
-  ],
-  "packageRules": [
-      {
-          "matchPackagePatterns": ["GRDB.swift/SQLCipher"],
-          "matchManagers": ["cocoapods"],
-          "enabled": false
-      }
   ]
 }

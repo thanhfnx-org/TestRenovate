@@ -14,6 +14,7 @@
 		F450235D2BFFB87C00A42DDC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F450235C2BFFB87C00A42DDC /* Base */; };
 		F450235F2BFFB87D00A42DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F450235E2BFFB87D00A42DDC /* Assets.xcassets */; };
 		F45023622BFFB87D00A42DDC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F45023612BFFB87D00A42DDC /* Base */; };
+		F4CAB6832C003DB0001FF981 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = F4CAB6822C003DB0001FF981 /* GRDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF68A7D537767FE0BCD3E312 /* Pods_TestRenovate.framework in Frameworks */,
+				F4CAB6832C003DB0001FF981 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +50,6 @@
 				807C2E3DEA0C186515274AF0 /* Pods-TestRenovate.debug.xcconfig */,
 				FA01A4BC8327C7444FDE77D4 /* Pods-TestRenovate.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,6 +112,9 @@
 			dependencies = (
 			);
 			name = TestRenovate;
+			packageProductDependencies = (
+				F4CAB6822C003DB0001FF981 /* GRDB */,
+			);
 			productName = TestRenovate;
 			productReference = F45023522BFFB87C00A42DDC /* TestRenovate.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +143,9 @@
 				Base,
 			);
 			mainGroup = F45023492BFFB87C00A42DDC;
+			packageReferences = (
+				F4CAB6812C003DB0001FF981 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+			);
 			productRefGroup = F45023532BFFB87C00A42DDC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -452,6 +459,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F4CAB6812C003DB0001FF981 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F4CAB6822C003DB0001FF981 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F4CAB6812C003DB0001FF981 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F450234A2BFFB87C00A42DDC /* Project object */;
 }

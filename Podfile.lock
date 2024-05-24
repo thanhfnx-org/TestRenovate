@@ -41,8 +41,6 @@ PODS:
   - GoogleUtilities/UserDefaults (7.13.3):
     - GoogleUtilities/Logger
     - GoogleUtilities/Privacy
-  - GRDB.swift/SQLCipher (6.24.1):
-    - SQLCipher (>= 3.4.2)
   - GSKStretchyHeaderView (1.0.4)
   - IQKeyboardManagerSwift (7.0.3)
   - Kingfisher (7.11.0)
@@ -70,11 +68,6 @@ PODS:
   - SkyWay (5.0.0)
   - SnapKit (5.6.0)
   - SocketRocket (0.7.0)
-  - SQLCipher (4.5.7):
-    - SQLCipher/standard (= 4.5.7)
-  - SQLCipher/common (4.5.7)
-  - SQLCipher/standard (4.5.7):
-    - SQLCipher/common
   - SwiftFormat/CLI (0.52.0)
   - SwiftLint (0.54.0)
   - SwiftyJSON (5.0.2)
@@ -89,7 +82,6 @@ DEPENDENCIES:
   - FirebaseRemoteConfig (= 10.25.0)
   - GoogleMaps (= 8.1.0)
   - GooglePlaces (= 8.1.0)
-  - GRDB.swift/SQLCipher (= 6.24.1)
   - GSKStretchyHeaderView (= 1.0.4)
   - IQKeyboardManagerSwift (= 7.0.3)
   - Kingfisher (= 7.11.0)
@@ -128,7 +120,6 @@ SPEC REPOS:
     - GoogleMaps
     - GooglePlaces
     - GoogleUtilities
-    - GRDB.swift
     - GSKStretchyHeaderView
     - IQKeyboardManagerSwift
     - Kingfisher
@@ -149,7 +140,6 @@ SPEC REPOS:
     - SkyWay
     - SnapKit
     - SocketRocket
-    - SQLCipher
     - SwiftFormat
     - SwiftLint
     - SwiftyJSON
@@ -169,7 +159,6 @@ SPEC CHECKSUMS:
   GoogleMaps: 97300a4b89a3641563782c52228c4530f5fe0d89
   GooglePlaces: 6a219644272d9c0f40d0b9ef2f111bfb2043bafc
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
-  GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
   IQKeyboardManagerSwift: f9c5dc36cba16ddd2e51fa7d51c34a2e083029b5
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
@@ -190,7 +179,6 @@ SPEC CHECKSUMS:
   SkyWay: bcc548bb0617e937fd9e468f9b204f2fc36f69f9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
-  SQLCipher: 5e6bfb47323635c8b657b1b27d25c5f1baf63bf5
   SwiftFormat: 6ef2bbc785b94abb8ee5700a61e28f75b5342abc
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
@@ -198,6 +186,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: fa9b5b5831f28a64e10d69c703e1310081e869a3
+PODFILE CHECKSUM: 32f560d6a9903477a868019b7f6b18740588d861
 
 COCOAPODS: 1.15.2
