@@ -27,4 +27,4 @@ jobs:
           echo 'hello' > hello.txt
           git add .
           git commit -m "Update artifact files"
-          git push origin ${{ github.head_ref || github.ref_name }} 
+          git push origin origin/${{ github.head_ref || github.ref_name }} 
