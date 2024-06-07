@@ -29,7 +29,7 @@ target 'TestRenovate' do
   pod 'Kingfisher', '7.11.0'
   pod 'SkyWay', '5.0.0'
   pod 'GSKStretchyHeaderView', '1.0.4'
-  pod 'NewRelicAgent', '7.4.11'
+  pod 'NewRelicAgent', '7.4.12'
   pod 'Periphery', '2.18.0'
   pod 'FirebaseRemoteConfig', '10.25.0'
   pod 'FirebaseInstallations', '10.25.0'
