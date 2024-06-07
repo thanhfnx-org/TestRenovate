@@ -23,10 +23,9 @@ jobs:
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git remote -v
-          git fetch --all
+          git checkout ${{ github.head_ref || github.ref_name }} 
           echo ${{ github.head_ref || github.ref_name }} 
           echo 'hello' > hello.txt
           git add .
           git commit -m "Update artifact files"
-          git push origin origin/${{ github.head_ref || github.ref_name }} 
+          git push
