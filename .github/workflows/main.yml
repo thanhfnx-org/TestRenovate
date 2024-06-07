@@ -21,7 +21,9 @@ jobs:
       - name: Pod install
         run: pod install
       - name: Auto commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: Update artifact files (Podfile.lock)
-          file_pattern: 'Podfile*'
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Update artifact files"
+          git push
