@@ -1,7 +1,11 @@
 name: Pod install after renovatebot
 on:
   pull_request:
-    types: [ opened ]
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
 
 jobs:
   pod-install:
