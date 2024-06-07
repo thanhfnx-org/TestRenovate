@@ -1,0 +1,16 @@
+name: Pod install after renovatebot
+on:
+  pull_request:
+    types: [ opened ]
+
+jobs:
+  pod-install:
+    if: ${{ github.actor == 'renovate[bot]' }}
+    name: Pod install
+    runs-on: macos-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Pod install
+          run: pod install
+            
