@@ -1,8 +1,7 @@
 name: Update artifact files for renovate
 on:
   pull_request:
-    branches:
-      - develop
+    branches: 'renovate*'
     types:
       - opened
       - reopened
