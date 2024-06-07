@@ -11,11 +11,8 @@ on:
 
 jobs:
   update-artifact-files:
-    if: ${{ github.actor == 'renovate[bot]' }}
     name: Update artifact files for renovate
     runs-on: macos-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,7 +22,8 @@ jobs:
           git config user.email github-actions@github.com
           git remote -v
           git fetch --all
+          echo ${{ github.head_ref || github.ref_name }} 
           echo 'hello' > hello.txt
           git add .
           git commit -m "Update artifact files"
-          git push
+          git push origin ${{ github.head_ref || github.ref_name }} 
