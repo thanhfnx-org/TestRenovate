@@ -48,7 +48,7 @@ PODS:
   - Kingfisher (7.11.0)
   - MBProgressHUD (1.2.0)
   - MGSwipeTableCell (1.6.14)
-  - NewRelicAgent (7.4.11)
+  - NewRelicAgent (7.4.12)
   - Parchment (3.2.0)
   - Periphery (2.18.0)
   - PromisesObjC (2.4.0)
@@ -95,7 +95,7 @@ DEPENDENCIES:
   - Kingfisher (= 7.11.0)
   - MBProgressHUD (= 1.2.0)
   - MGSwipeTableCell (= 1.6.14)
-  - NewRelicAgent (= 7.4.11)
+  - NewRelicAgent (= 7.4.12)
   - Parchment (= 3.2.0)
   - Periphery (= 2.18.0)
   - R.swift (= 7.3.2)
@@ -175,7 +175,7 @@ SPEC CHECKSUMS:
   Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGSwipeTableCell: d99ed6466f393b71cd488c6f798ba112ff5d1d01
-  NewRelicAgent: fff46a2ed2d3a32e7d644382ea7be00b59433670
+  NewRelicAgent: 4b8ca7cad21bff3cdaa2824c1f814ff7b34ba382
   Parchment: a43c440b22c8a60f7e0196b74339446d4d1d18ea
   Periphery: df811cd90304f9ca6bed6c1904c5ac1a88cff23f
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 0a05481c8295fddbbfe091db6d06b72472da5855
+PODFILE CHECKSUM: 0c1891c5ac6a5a6b6e4b699b87a4fb50a960e21c
 
 COCOAPODS: 1.15.2
