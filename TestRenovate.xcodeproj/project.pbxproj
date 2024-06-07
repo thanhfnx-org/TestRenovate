@@ -14,7 +14,6 @@
 		F450235D2BFFB87C00A42DDC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F450235C2BFFB87C00A42DDC /* Base */; };
 		F450235F2BFFB87D00A42DDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F450235E2BFFB87D00A42DDC /* Assets.xcassets */; };
 		F45023622BFFB87D00A42DDC /* Base in Resources */ = {isa = PBXBuildFile; fileRef = F45023612BFFB87D00A42DDC /* Base */; };
-		F4CAB6832C003DB0001FF981 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = F4CAB6822C003DB0001FF981 /* GRDB */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF68A7D537767FE0BCD3E312 /* Pods_TestRenovate.framework in Frameworks */,
-				F4CAB6832C003DB0001FF981 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +111,6 @@
 			);
 			name = TestRenovate;
 			packageProductDependencies = (
-				F4CAB6822C003DB0001FF981 /* GRDB */,
 			);
 			productName = TestRenovate;
 			productReference = F45023522BFFB87C00A42DDC /* TestRenovate.app */;
@@ -470,14 +467,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F4CAB6822C003DB0001FF981 /* GRDB */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4CAB6812C003DB0001FF981 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
-			productName = GRDB;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F450234A2BFFB87C00A42DDC /* Project object */;
 }

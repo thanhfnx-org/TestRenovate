@@ -35,4 +35,5 @@ target 'TestRenovate' do
   pod 'FirebaseInstallations', '10.25.0'
   pod 'GooglePlaces', '8.1.0'
   pod 'GoogleMaps', '8.1.0'
+  pod 'GRDB.swift/SQLCipher', '6.24.1'
 end
