@@ -1,4 +1,4 @@
-name: Update artifact files for renovate[bot]
+name: Renovate post install
 on:
   pull_request:
     branches:
