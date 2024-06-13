@@ -1,0 +1,27 @@
+name: CI / iOS
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  check-spell:
+    name: Check spell
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Code Spell Checker
+        run: npm install -g cspell
+      - name: Check Code Spell
+        run: cspell "**/*.swift" > cspell.log
+      - name: Run reviewdog for Code Spell Checker
+        if: failure()
+        run: echo 'Failed-------------'
