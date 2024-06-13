@@ -3,6 +3,12 @@ on:
   pull_request:
     branches:
       - main
+  workflow_run:
+    workflows: [Renovate post install]
+    branches:
+      - main
+    types:
+      - completed
 
 permissions:
   contents: read
