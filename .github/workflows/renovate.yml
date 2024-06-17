@@ -8,14 +8,16 @@ on:
       - reopened
       - synchronize
       - labeled
+      
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   update-artifact-files:
     if: ${{ github.actor == 'renovate[bot]' }}
     name: Update artifact files for renovate[bot]
     runs-on: macos-latest
-    permissions:
-      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
