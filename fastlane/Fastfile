@@ -1,0 +1,27 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+lane :addIssueComment do |options|
+  token = options[:token]
+  pull_request_id = options[:pull_request_id]
+  comment = options[:comment]
+
+  request_body = {
+    'body' => comment
+  }
+  github_api(
+    api_bearer: token,
+    http_method: 'POST',
+    body: request_body,
+    path: "/repos/thanhfnx-org/TestRenovate/issues/#{pull_request_id}/comments"
+  )
+end
