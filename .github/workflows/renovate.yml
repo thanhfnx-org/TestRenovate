@@ -2,7 +2,7 @@ name: Renovate post install
 on:
   pull_request:
     branches:
-      - main1
+      - main
     types:
       - opened
       - reopened
@@ -28,6 +28,7 @@ jobs:
           commit_message: Update artifact files
           file_pattern: 'Podfile*'
   ci-ios:
+    name: Check spell
     needs: update-artifact-files
     permissions:
       contents: read
@@ -35,6 +36,7 @@ jobs:
     uses: ./.github/workflows/ci_ios.yml
 
   ci_pr:
+    name: Check title
     needs: ci-ios
     permissions:
       contents: read
