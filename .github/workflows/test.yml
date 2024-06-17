@@ -25,5 +25,10 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ steps.get_workflow_token.outputs.token }}
+      - name: Install Ruby, bundler, fastlane and other dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+          bundler-cache: true
       - name: Comment on PR
         run: bundle exec fastlane ios add_comment pull_request_id:"${{ github.event.pull_request.number }}" token:"${{ steps.get_workflow_token.outputs.token }}" comment:"This PR is linked to EB-123942."
