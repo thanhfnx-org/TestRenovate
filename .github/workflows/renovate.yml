@@ -30,5 +30,6 @@ jobs:
   rerun-ci:
     needs: update-artifact-files
     permissions:
+      contents: read
       pull-requests: write
     uses: thanhfnx-org/TestRenovate/.github/workflows/ci_ios.yml@main
