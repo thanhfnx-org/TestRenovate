@@ -20,7 +20,6 @@ jobs:
         with:
           application_id: ${{ secrets.APP_ID }}
           application_private_key: ${{ secrets.APP_PRIVATE_KEY }}
-          permissions: "actions:write"
       - name: Checkout
         uses: actions/checkout@v4
         with:
