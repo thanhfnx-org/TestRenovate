@@ -28,3 +28,5 @@ jobs:
         with:
           commit_message: Update artifact files
           file_pattern: 'Podfile*'
+      - name: Rerun ci
+        uses: thanhfnx-org/TestRenovate/.github/workflows/ci_ios.yml@main
