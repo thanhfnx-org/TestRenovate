@@ -35,7 +35,7 @@ jobs:
     uses: ./.github/workflows/ci_ios.yml
 
   ci_pr:
-    needs: update-artifact-files
+    needs: ci-ios
     permissions:
       contents: read
       issues: read
