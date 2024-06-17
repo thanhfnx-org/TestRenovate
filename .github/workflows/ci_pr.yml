@@ -27,10 +27,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          # Fetch all branches to allow Danger to find merge base.
-          fetch-depth: 0
-      - name: Setup Ruby
-        uses: ./.github/actions/setup-ruby
       - name: Generate env file
         run: echo 'Running danger....'
