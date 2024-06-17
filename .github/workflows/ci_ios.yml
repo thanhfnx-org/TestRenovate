@@ -9,6 +9,7 @@ on:
       - main
     types:
       - completed
+  workflow_call:
 
 permissions:
   contents: read
