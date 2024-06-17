@@ -7,10 +7,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - run: |
-          echo "${{ secrets.ENV }}" > .env
-          cat .env
-          echo toJson(secrets)
-          echo fromJson(secrets)
-          echo toJson(secrets.ENV)
-          echo fromJson(secrets.ENV)
+          echo "${{ secrets.ENV }}" >> $GITHUB_ENV
+          echo ${{ env.APP_ID}}
     
