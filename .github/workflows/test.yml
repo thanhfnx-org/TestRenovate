@@ -1,0 +1,16 @@
+name: Test
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+    steps:
+      - run: |
+          echo "${{ secrets.ENV }}" > .env
+          cat .env
+          echo toJson(secrets)
+          echo fromJson(secrets)
+          echo toJson(secrets.ENV)
+          echo fromJson(secrets.ENV)
+    
