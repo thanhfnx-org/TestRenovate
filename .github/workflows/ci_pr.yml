@@ -1,0 +1,36 @@
+name: CI / PR
+on:
+  workflow_call:
+  pull_request:
+    branches:
+      - "develop*"
+    types:
+      - opened
+      # Specify the following because we want to trigger when editing a PR title.
+      - edited
+      - reopened
+      - synchronize
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: write
+  statuses: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  check_title:
+    name: Check title
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Fetch all branches to allow Danger to find merge base.
+          fetch-depth: 0
+      - name: Setup Ruby
+        uses: ./.github/actions/setup-ruby
+      - name: Generate env file
+        run: echo 'Running danger....'
