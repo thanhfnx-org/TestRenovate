@@ -6,8 +6,12 @@ jobs:
     name: Test
     runs-on: macos-latest
     steps:
-      - run: |
-          echo "$SECRETS_CONTEXT"
+      - name: Expose env
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-    
+        run: |
+          EOF=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
+          to_envs() { jq -r "to_entries[] | \"\(.key)<<$EOF\n\(.value)\n$EOF\n\""; }
+          echo "$SECRETS_CONTEXT" | to_envs >> $GITHUB_ENV
+      - run: |
+          echo ${{ env.APP_ID }}
