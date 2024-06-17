@@ -20,6 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
+          token: ${{ secrets.PAT }}
       - name: Pod install
         run: pod install
       - name: Auto commit and push changes
