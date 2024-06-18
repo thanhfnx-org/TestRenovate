@@ -10,6 +10,46 @@
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
 
+private_lane :updatePullRequestTitle do |options|
+  token = options[:token]
+  pull_request_id = options[:pull_request_id]
+  title = options[:title]
+
+  request_body = {
+    'title' => title
+  }
+  github_api(
+    api_bearer: token,
+    http_method: 'PATCH',
+    body: request_body,
+    path: "/repos/thanhfnx-org/TestRenovate/issues/#{pull_request_id}"
+  )
+end
+
+private_lane :issueComments do |options|
+  token = options[:token]
+  issue_id = options[:issue_id]
+
+  response = github_api(
+    api_bearer: token,
+    http_method: 'GET',
+    path: "/repos/thanhfnx-org/TestRenovate/issues/#{issue_id}/comments"
+  )
+
+  response[:json]
+end
+
+lane :update_title do |options|
+  all_comments = issueComments(
+    token: options[:token],
+    issue_id: options[:issue_id]
+  )
+  created_jira_issue_id = all_comments
+    .map { |comment| comment["body"] }
+    .find { |body| body.match(/(?<=This PR is linked to https:\/\/elgana\.atlassian\.net\/browse\/).*(?= \.)/) }
+  puts created_jira_issue_id if created_jira_issue_id
+end
+
 lane :addIssueComment do |options|
   token = options[:token]
   pull_request_id = options[:pull_request_id]
