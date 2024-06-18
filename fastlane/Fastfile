@@ -39,15 +39,24 @@ private_lane :issueComments do |options|
   response[:json]
 end
 
-lane :update_title do |options|
+lane :addJiraTicketToPullRequestTitle do |options|
+  origin_title = options[:origin_title]
   all_comments = issueComments(
     token: options[:token],
     issue_id: options[:issue_id]
   )
-  created_jira_issue_id = all_comments
+  pattern = /(?<=This PR is linked to https:\/\/elgana\.atlassian\.net\/browse\/).*(?= \.)/
+  created_jira_issue_comment = all_comments
     .map { |comment| comment["body"] }
-    .find { |body| body.match(/(?<=This PR is linked to https:\/\/elgana\.atlassian\.net\/browse\/).*(?= \.)/) }
-  puts created_jira_issue_id if created_jira_issue_id
+    .find { |body| body.match(pattern) }
+  return if created_jira_issue_comment.nil?
+  created_jira_key = created_jira_issue_comment.match(pattern)[1]
+
+  updatePullRequestTitle(
+    token: options[:token],
+    pull_request_id: options[:issue_id],
+    title: "[Build][#{create_jira_key}] #{origin_title}"
+  )
 end
 
 lane :addIssueComment do |options|
