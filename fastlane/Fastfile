@@ -55,7 +55,7 @@ lane :addJiraTicketToPullRequestTitle do |options|
   updatePullRequestTitle(
     token: options[:token],
     pull_request_id: options[:issue_id],
-    title: "[Build][#{create_jira_key}] #{origin_title}"
+    title: "[Build][#{created_jira_key}] #{origin_title}"
   )
 end
 
