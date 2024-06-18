@@ -52,7 +52,7 @@ lane :addJiraTicketToPullRequestTitle do |options|
   return if created_jira_issue_comment.nil?
   puts "comment #{created_jira_issue_comment}"
   created_jira_key = created_jira_issue_comment.match(pattern)[1]
-  puts "jira #{created_jira_key} - #{created_jira_issue_comment.match(pattern)} - #{created_jira_issue_comment.match(pattern)}[0]"
+  puts "jira #{created_jira_key} - #{created_jira_issue_comment.match(pattern)} - #{created_jira_issue_comment.match(pattern)[0]}"
 
   updatePullRequestTitle(
     token: options[:token],
