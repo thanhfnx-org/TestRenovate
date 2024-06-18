@@ -28,4 +28,4 @@ jobs:
           ruby-version: 3.3.0
           bundler-cache: true
       - name: Comment on PR
-        run: bundle exec fastlane update_title issue_id:4 token:"${{ steps.get_workflow_token.outputs.token }}"
+        run: bundle exec fastlane addJiraTicketToPullRequestTitle issue_id:4 token:"${{ steps.get_workflow_token.outputs.token }}" origin_title:"HIHIHIHI"
