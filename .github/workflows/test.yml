@@ -6,6 +6,11 @@ jobs:
     name: Test
     runs-on: macos-latest
     steps:
+      - name: Install Ruby, bundler, fastlane and other dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+          bundler-cache: true
       - name: Generate .env file
         run: |
           echo "${{ secrets.ENV }}" > .env
@@ -23,10 +28,5 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
           token: ${{ steps.get_workflow_token.outputs.token }}
-      - name: Install Ruby, bundler, fastlane and other dependencies
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.3.0
-          bundler-cache: true
       - name: Comment on PR
         run: bundle exec fastlane addJiraTicketToPullRequestTitle issue_id:4 token:"${{ steps.get_workflow_token.outputs.token }}" origin_title:"HIHIHIHI"
