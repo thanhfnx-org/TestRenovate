@@ -53,7 +53,7 @@ lane :addJiraTicketToPullRequestTitle do |options|
   created_jira_key = created_jira_issue_comment.match(pattern)[0]
   jira_tag = "[Build][#{created_jira_key}]"
 
-  return if original_title.include?(jira_tag)
+  return if origin_title.include?(jira_tag)
   
   updatePullRequestTitle(
     token: options[:token],
