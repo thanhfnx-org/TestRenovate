@@ -15,7 +15,7 @@ target 'TestRenovate' do
   pod 'SwinjectStoryboard', '2.2.2'
   pod 'Alamofire', '5.9.1'
   pod 'RxSwift', '6.6.0'
-  pod 'RxCocoa', '6.6.0'
+  pod 'RxCocoa', '6.7.1'
   pod 'ReachabilitySwift', '5.0.0'
   pod 'MBProgressHUD', '1.2.0'
   pod 'SnapKit', '5.6.0'
