@@ -13,34 +13,26 @@ jobs:
     name: Renovate post install
     runs-on: macos-latest
     steps:
-      - name: Generate .env file
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: |
-          echo "${{ secrets.ENV }}" > .env
-          echo "$GITHUB_CONTEXT"
-      - name: Load .env file
-        id: dotenv
-        uses: falti/dotenv-action@v1.1.3
-      - name: Generate github token
-        id: get_workflow_token
-        uses: peter-murray/workflow-application-token-action@v3
+      - name: Generate token
+        id: generate-token
+        uses: tibdex/github-app-token@v2
         with:
-          application_id: ${{ steps.dotenv.outputs.GITHUB_APP_ID }}
-          application_private_key: ${{ secrets.GH_APPS_PRIVATE_KEY_PEM }}
+          app_id: ${{ secrets.ELGANA_MOBILE_WORKFLOW_APP_ID }}
+          private_key: ${{ secrets.ELGANA_MOBILE_WORKFLOW_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-          token: ${{ steps.get_workflow_token.outputs.token }}
+          token: ${{ steps.generate-token.outputs.token }}
       - name: Install Ruby, bundler, fastlane and other dependencies
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.3.0
           bundler-cache: true
       - name: Update PR title
-        run: bundle exec fastlane addJiraTicketToPullRequestTitle issue_id:"${{ github.event.pull_request.number }}" token:"${{ steps.get_workflow_token.outputs.token }}" origin_title:"${{ github.event.pull_request.title }}"
+        run: bundle exec fastlane addJiraTicketToPullRequestTitle issue_id:"${{ github.event.pull_request.number }}" token:"${{ steps.generate-token.outputs.token }}" origin_title:"${{ github.event.pull_request.title }}"
       - name: Pod install
+        if: contains(join(github.event.pull_request.labels.*.name, ' '), 'cocoapods')
         run: pod install
       - name: Auto commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
