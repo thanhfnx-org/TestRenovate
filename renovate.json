@@ -15,5 +15,6 @@
     }
   ],
   "rangeStrategy": "pin",
-  "rebaseWhen": "never"
+  "rebaseWhen": "never",
+  "recreateWhen": "always"
 }
