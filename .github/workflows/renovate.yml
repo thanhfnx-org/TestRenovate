@@ -14,9 +14,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Generate .env file
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
         run: |
           echo "${{ secrets.ENV }}" > .env
-          echo ${{ fromJson(github) }}
+          echo "$GITHUB_CONTEXT"
       - name: Load .env file
         id: dotenv
         uses: falti/dotenv-action@v1.1.3
