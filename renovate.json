@@ -8,9 +8,12 @@
     {
       "matchManagers": ["cocoapods"],
       "addLabels": ["cocoapods"]
+    },
+    {
+      "matchPackagePatterns": ["RxSwift", "RxCocoa"],
+      "groupName": "Rx"
     }
   ],
-  "prConcurrentLimit": 4,
   "rangeStrategy": "pin",
   "rebaseWhen": "never"
 }
