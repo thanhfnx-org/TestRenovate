@@ -11,7 +11,7 @@ target 'TestRenovate' do
   pod 'SwiftFormat/CLI', '0.52.0'
   pod 'SwiftLint', '0.54.0'
   pod 'R.swift', '7.3.2'
-  pod 'Swinject', '2.7.1'
+  pod 'Swinject', '2.9.1'
   pod 'SwinjectStoryboard', '2.2.2'
   pod 'Alamofire', '5.9.1'
   pod 'RxSwift', '6.6.0'
