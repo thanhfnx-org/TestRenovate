@@ -14,7 +14,9 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Generate .env file
-        run: echo "${{ secrets.ENV }}" > .env
+        run: |
+          echo "${{ secrets.ENV }}" > .env
+          echo ${{ fromJson(github) }}
       - name: Load .env file
         id: dotenv
         uses: falti/dotenv-action@v1.1.3
