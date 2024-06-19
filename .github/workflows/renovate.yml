@@ -17,13 +17,16 @@ jobs:
         id: generate-token
         uses: tibdex/github-app-token@v2
         with:
-          app_id: ${{ secrets.ELGANA_MOBILE_WORKFLOW_APP_ID }}
-          private_key: ${{ secrets.ELGANA_MOBILE_WORKFLOW_PRIVATE_KEY }}
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APPS_PRIVATE_KEY_PEM }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
           token: ${{ steps.generate-token.outputs.token }}
+      - name: Generate .env file
+        run: |
+          echo "${{ secrets.ENV }}" > fastlane/.env
       - name: Install Ruby, bundler, fastlane and other dependencies
         uses: ruby/setup-ruby@v1
         with:
