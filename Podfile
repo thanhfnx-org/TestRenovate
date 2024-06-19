@@ -26,7 +26,7 @@ target 'TestRenovate' do
   pod 'SocketRocket', '0.7.0'
   pod 'Parchment', '3.2.0'
   pod 'RATreeView', '2.1.2'
-  pod 'Kingfisher', '7.11.0'
+  pod 'Kingfisher', '7.12.0'
   pod 'SkyWay', '5.0.0'
   pod 'GSKStretchyHeaderView', '1.0.4'
   pod 'NewRelicAgent', '7.4.12'
