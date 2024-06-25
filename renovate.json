@@ -11,11 +11,11 @@
     },
     {
       "matchPackagePatterns": ["RxSwift", "RxCocoa"],
-      "groupName": "Rx"
+      "groupName": "Rx Dependencies"
     },
     {
       "matchPackagePatterns": ["FirebaseRemoteConfig", "FirebaseInstallations"],
-      "groupName": "Firebase"
+      "groupName": "Firebase Dependencies"
     }
   ],
   "rangeStrategy": "pin",
