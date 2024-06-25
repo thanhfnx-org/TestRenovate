@@ -61,12 +61,12 @@ PODS:
   - Reusable/Storyboard (4.1.2)
   - Reusable/View (4.1.2)
   - RSKImageCropper (4.0.0)
-  - RxCocoa (6.6.0):
-    - RxRelay (= 6.6.0)
-    - RxSwift (= 6.6.0)
-  - RxRelay (6.6.0):
-    - RxSwift (= 6.6.0)
-  - RxSwift (6.6.0)
+  - RxCocoa (6.7.1):
+    - RxRelay (= 6.7.1)
+    - RxSwift (= 6.7.1)
+  - RxRelay (6.7.1):
+    - RxSwift (= 6.7.1)
+  - RxSwift (6.7.1)
   - SkyWay (5.0.0)
   - SnapKit (5.6.0)
   - SocketRocket (0.7.0)
@@ -103,8 +103,8 @@ DEPENDENCIES:
   - ReachabilitySwift (= 5.0.0)
   - Reusable (= 4.1.2)
   - RSKImageCropper (= 4.0.0)
-  - RxCocoa (= 6.6.0)
-  - RxSwift (= 6.6.0)
+  - RxCocoa (= 6.7.1)
+  - RxSwift (= 6.7.1)
   - SkyWay (= 5.0.0)
   - SnapKit (= 5.6.0)
   - SocketRocket (= 0.7.0)
@@ -184,9 +184,9 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Reusable: 6bae6a5e8aa793c9c441db0213c863a64bce9136
   RSKImageCropper: 90dfe482402fb8a40cabd5fea65186d9102cc425
-  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
-  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
-  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  RxCocoa: f5609cb4637587a7faa99c5d5787e3ad582b75a4
+  RxRelay: 4151ba01152436b08271e08410135e099880eae5
+  RxSwift: b9a93a26031785159e11abd40d1a55bcb8057e52
   SkyWay: bcc548bb0617e937fd9e468f9b204f2fc36f69f9
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 031fc7686984f645de2509157ef8f45a82b50ce8
+PODFILE CHECKSUM: 3e9bbfc0276f18512918c30ae37d61c745594626
 
 COCOAPODS: 1.15.2
