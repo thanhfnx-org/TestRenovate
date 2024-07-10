@@ -45,7 +45,7 @@ PODS:
     - SQLCipher (>= 3.4.2)
   - GSKStretchyHeaderView (1.0.4)
   - IQKeyboardManagerSwift (7.0.3)
-  - Kingfisher (7.11.0)
+  - Kingfisher (7.12.0)
   - MBProgressHUD (1.2.0)
   - MGSwipeTableCell (1.6.14)
   - NewRelicAgent (7.4.12)
@@ -92,7 +92,7 @@ DEPENDENCIES:
   - GRDB.swift/SQLCipher (= 6.24.1)
   - GSKStretchyHeaderView (= 1.0.4)
   - IQKeyboardManagerSwift (= 7.0.3)
-  - Kingfisher (= 7.11.0)
+  - Kingfisher (= 7.12.0)
   - MBProgressHUD (= 1.2.0)
   - MGSwipeTableCell (= 1.6.14)
   - NewRelicAgent (= 7.4.12)
@@ -172,7 +172,7 @@ SPEC CHECKSUMS:
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   GSKStretchyHeaderView: 9743704c12bdc9cf7c7947bad3af8bf24f7061e3
   IQKeyboardManagerSwift: f9c5dc36cba16ddd2e51fa7d51c34a2e083029b5
-  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
+  Kingfisher: 53a10ea35051a436b5fb626ca2dd8f3144d755e9
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGSwipeTableCell: d99ed6466f393b71cd488c6f798ba112ff5d1d01
   NewRelicAgent: 4b8ca7cad21bff3cdaa2824c1f814ff7b34ba382
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 031fc7686984f645de2509157ef8f45a82b50ce8
+PODFILE CHECKSUM: b6b881d2ec7f51507696b8a734ce941e42a0d5e8
 
 COCOAPODS: 1.15.2
