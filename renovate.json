@@ -20,5 +20,6 @@
   ],
   "rangeStrategy": "pin",
   "rebaseWhen": "auto",
-  "recreateWhen": "always"
+  "recreateWhen": "always",
+  "commitMessage": "Update {{depName}} to v{{newVersion}}"
 }
