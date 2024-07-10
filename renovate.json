@@ -12,12 +12,12 @@
     {
       "matchPackagePatterns": ["RxSwift", "RxCocoa"],
       "groupName": "Rx Dependencies",
-      "commitMessageTopic": "{{depName}}",
+      "commitMessageTopic": "{{groupName}}",
     },
     {
       "matchPackagePatterns": ["FirebaseRemoteConfig", "FirebaseInstallations"],
       "groupName": "Firebase Dependencies",
-      "commitMessageTopic": "{{depName}}",
+      "commitMessageTopic": "{{groupName}}",
     }
   ],
   "rangeStrategy": "pin",
