@@ -30,7 +30,7 @@ target 'TestRenovate' do
   pod 'SkyWay', '5.0.0'
   pod 'GSKStretchyHeaderView', '1.0.4'
   pod 'NewRelicAgent', '7.4.12'
-  pod 'Periphery', '2.18.0'
+  pod 'Periphery', '2.21.0'
   pod 'FirebaseRemoteConfig', '10.28.0'
   pod 'FirebaseInstallations', '10.28.0'
   pod 'GooglePlaces', '8.1.0'
