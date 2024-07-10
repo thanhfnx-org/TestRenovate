@@ -23,10 +23,10 @@ PODS:
     - "GoogleUtilities/NSData+zlib (~> 7.8)"
   - FirebaseRemoteConfigInterop (10.28.0)
   - FirebaseSharedSwift (10.28.0)
-  - GoogleMaps (8.1.0):
-    - GoogleMaps/Maps (= 8.1.0)
-  - GoogleMaps/Base (8.1.0)
-  - GoogleMaps/Maps (8.1.0):
+  - GoogleMaps (8.4.0):
+    - GoogleMaps/Maps (= 8.4.0)
+  - GoogleMaps/Base (8.4.0)
+  - GoogleMaps/Maps (8.4.0):
     - GoogleMaps/Base
   - GooglePlaces (8.1.0)
   - GoogleUtilities/Environment (7.13.3):
@@ -87,7 +87,7 @@ DEPENDENCIES:
   - Alamofire (= 5.9.1)
   - FirebaseInstallations (= 10.28.0)
   - FirebaseRemoteConfig (= 10.28.0)
-  - GoogleMaps (= 8.1.0)
+  - GoogleMaps (= 8.4.0)
   - GooglePlaces (= 8.1.0)
   - GRDB.swift/SQLCipher (= 6.24.1)
   - GSKStretchyHeaderView (= 1.0.4)
@@ -166,7 +166,7 @@ SPEC CHECKSUMS:
   FirebaseRemoteConfig: f0879a8dccf4e8905716ed849569130efaeab3e2
   FirebaseRemoteConfigInterop: 70d200c6956ef3b5c3592a95e824c1210682d785
   FirebaseSharedSwift: 48de4aec81a6b79bb30404e5e6db43ea74848fed
-  GoogleMaps: 97300a4b89a3641563782c52228c4530f5fe0d89
+  GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
   GooglePlaces: 6a219644272d9c0f40d0b9ef2f111bfb2043bafc
   GoogleUtilities: ea963c370a38a8069cc5f7ba4ca849a60b6d7d15
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 031fc7686984f645de2509157ef8f45a82b50ce8
+PODFILE CHECKSUM: 9b8df00747f32439b6838c6435ef117d9ce64c41
 
 COCOAPODS: 1.15.2
