@@ -27,6 +27,13 @@
       "commitMessageAction": "Update",
       "commitMessageTopic": "{{groupName}}",
       "commitMessageExtra": "to v{{toVersion}}"
+    },
+    {
+      "matchPackagePatterns": ["Swinject", "SwinjectStoryboard"],
+      "groupName": "Swinject Dependencies",
+      "commitMessageAction": "Update",
+      "commitMessageTopic": "{{groupName}}",
+      "commitMessageExtra": "to v{{toVersion}}"
     }
   ],
   "rangeStrategy": "pin",
