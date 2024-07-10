@@ -8,7 +8,7 @@ target 'TestRenovate' do
   # Pods for TestRenovate
   pod 'RSKImageCropper', '4.0.0'
   pod 'SwiftyJSON', '5.0.2'
-  pod 'SwiftFormat/CLI', '0.52.0'
+  pod 'SwiftFormat/CLI', '0.54.0'
   pod 'SwiftLint', '0.54.0'
   pod 'R.swift', '7.3.2'
   pod 'Swinject', '2.7.1'
