@@ -16,7 +16,7 @@ target 'TestRenovate' do
   pod 'Alamofire', '5.9.1'
   pod 'RxSwift', '6.6.0'
   pod 'RxCocoa', '6.6.0'
-  pod 'ReachabilitySwift', '5.0.0'
+  pod 'ReachabilitySwift', '5.2.3'
   pod 'MBProgressHUD', '1.2.0'
   pod 'SnapKit', '5.6.0'
   pod 'Then', '3.0.0'
