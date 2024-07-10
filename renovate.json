@@ -20,7 +20,7 @@
     },
     {
       "matchPackagePatterns": ["FirebaseRemoteConfig", "FirebaseInstallations"],
-      "groupName": "Firebase Dependencies"
+      "groupName": "Firebase Dependencies",
       "commitMessage": {
         "commitMessageAction": "Update",
         "commitMessageTopic": "{{groupName}}",
