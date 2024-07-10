@@ -68,7 +68,7 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - SkyWay (5.0.0)
-  - SnapKit (5.6.0)
+  - SnapKit (5.7.1)
   - SocketRocket (0.7.0)
   - SQLCipher (4.5.7):
     - SQLCipher/standard (= 4.5.7)
@@ -106,7 +106,7 @@ DEPENDENCIES:
   - RxCocoa (= 6.6.0)
   - RxSwift (= 6.6.0)
   - SkyWay (= 5.0.0)
-  - SnapKit (= 5.6.0)
+  - SnapKit (= 5.7.1)
   - SocketRocket (= 0.7.0)
   - SwiftFormat/CLI (= 0.52.0)
   - SwiftLint (= 0.54.0)
@@ -188,7 +188,7 @@ SPEC CHECKSUMS:
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SkyWay: bcc548bb0617e937fd9e468f9b204f2fc36f69f9
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SnapKit: d612e99e678a2d3b95bf60b0705ed0a35c03484a
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   SQLCipher: 5e6bfb47323635c8b657b1b27d25c5f1baf63bf5
   SwiftFormat: 6ef2bbc785b94abb8ee5700a61e28f75b5342abc
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 031fc7686984f645de2509157ef8f45a82b50ce8
+PODFILE CHECKSUM: 06785970e7cca6e46108f3fc5c123de2ed04a87f
 
 COCOAPODS: 1.15.2
