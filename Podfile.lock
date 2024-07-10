@@ -75,7 +75,7 @@ PODS:
   - SQLCipher/common (4.5.7)
   - SQLCipher/standard (4.5.7):
     - SQLCipher/common
-  - SwiftFormat/CLI (0.52.0)
+  - SwiftFormat/CLI (0.54.0)
   - SwiftLint (0.54.0)
   - SwiftyJSON (5.0.2)
   - Swinject (2.7.1)
@@ -108,7 +108,7 @@ DEPENDENCIES:
   - SkyWay (= 5.0.0)
   - SnapKit (= 5.6.0)
   - SocketRocket (= 0.7.0)
-  - SwiftFormat/CLI (= 0.52.0)
+  - SwiftFormat/CLI (= 0.54.0)
   - SwiftLint (= 0.54.0)
   - SwiftyJSON (= 5.0.2)
   - Swinject (= 2.7.1)
@@ -191,13 +191,13 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SocketRocket: abac6f5de4d4d62d24e11868d7a2f427e0ef940d
   SQLCipher: 5e6bfb47323635c8b657b1b27d25c5f1baf63bf5
-  SwiftFormat: 6ef2bbc785b94abb8ee5700a61e28f75b5342abc
+  SwiftFormat: 0e0b577434e6aa63bc82a8905b40d9597b8452d4
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   SwinjectStoryboard: 240ce371396da09a4c43c72ee5c148108500e184
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 031fc7686984f645de2509157ef8f45a82b50ce8
+PODFILE CHECKSUM: 83c94a536e0bb4632c50d5509de9904fb6197f6b
 
 COCOAPODS: 1.15.2
