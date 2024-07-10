@@ -15,7 +15,7 @@
       "commitMessage": {
         "commitMessageAction": "Update",
         "commitMessageTopic": "{{groupName}}",
-        "commitMessageTopic": "to v{{toVersion}}"
+        "commitMessageExtra": "to v{{toVersion}}"
       }
     },
     {
@@ -24,7 +24,7 @@
       "commitMessage": {
         "commitMessageAction": "Update",
         "commitMessageTopic": "{{groupName}}",
-        "commitMessageTopic": "to v{{toVersion}}"
+        "commitMessageExtra": "to v{{toVersion}}"
       }
     }
   ],
@@ -34,6 +34,6 @@
   "commitMessage": {
     "commitMessageAction": "Update",
     "commitMessageTopic": "{{depName}}",
-    "commitMessageTopic": "to v{{toVersion}}"
+    "commitMessageExtra": "to v{{toVersion}}"
   }
 }
