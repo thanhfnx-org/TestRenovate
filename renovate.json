@@ -11,15 +11,29 @@
     },
     {
       "matchPackagePatterns": ["RxSwift", "RxCocoa"],
-      "groupName": "Rx Dependencies"
+      "groupName": "Rx Dependencies",
+      "commitMessage": {
+        "commitMessageAction": "Update",
+        "commitMessageTopic": "{{groupName}}",
+        "commitMessageTopic": "to v{{toVersion}}"
+      }
     },
     {
       "matchPackagePatterns": ["FirebaseRemoteConfig", "FirebaseInstallations"],
       "groupName": "Firebase Dependencies"
+      "commitMessage": {
+        "commitMessageAction": "Update",
+        "commitMessageTopic": "{{groupName}}",
+        "commitMessageTopic": "to v{{toVersion}}"
+      }
     }
   ],
   "rangeStrategy": "pin",
   "rebaseWhen": "auto",
   "recreateWhen": "always",
-  "commitMessage": "Update {{depName}} to v{{newVersion}}"
+  "commitMessage": {
+    "commitMessageAction": "Update",
+    "commitMessageTopic": "{{depName}}",
+    "commitMessageTopic": "to v{{toVersion}}"
+  }
 }
