@@ -18,7 +18,7 @@ target 'TestRenovate' do
   pod 'RxCocoa', '6.6.0'
   pod 'ReachabilitySwift', '5.0.0'
   pod 'MBProgressHUD', '1.2.0'
-  pod 'SnapKit', '5.6.0'
+  pod 'SnapKit', '5.7.1'
   pod 'Then', '3.0.0'
   pod 'IQKeyboardManagerSwift', '7.0.3'
   pod 'MGSwipeTableCell', '1.6.14'
