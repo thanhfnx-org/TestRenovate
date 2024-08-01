@@ -2,7 +2,7 @@ name: Renovate post install
 on:
   pull_request:
     branches:
-      - main
+      - main1
     types:
       - opened
       - reopened
