@@ -1,15 +1,27 @@
 name: PR opened
 
 on:
-  pull_request:
-    types: [opened]
-    branches:
-      - main
+  workflow_dispatch:
+    inputs:
+      pr_title:
+        description: 'Pull request title'
+        type: environment
+        required: true
+      pr_number:
+        description: 'Pull request number'
+        type: environment
+        required: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run a script
-        run: echo "Hello, world!"
+      
+      - name: Run if pull_request_number exists
+        if: ${{ github.event.inputs.pr_title && github.event.inputs.pr_number }}
+        run: echo "Payload value exists. Running the step... ${{ github.event.inputs.pr_title }} - ${{ github.event.inputs.pr_number }}"
+
+      - name: Run if pull_request_number does not exist
+        if: ${{ !inputs.pr_title || !inputs.pr_number }}
+        run: echo "Payload value does not exist. Running the alternative step... ${{ github.event.pull_request.title }} - ${{ github.event.pull_request.number }}"
