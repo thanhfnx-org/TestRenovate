@@ -1,6 +1,5 @@
 /cherry-pick-for-release.sh
 /cspell.log
-/fastlane/.env
 /fastlane/.env.Production
 /fastlane/.env.St4*
 /fastlane/.env.St5*

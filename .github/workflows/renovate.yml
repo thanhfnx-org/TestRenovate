@@ -7,38 +7,38 @@ on:
       - opened
       - reopened
       - synchronize
-      - labeled
 jobs:
-  update-artifact-files:
+  post-install:
     if: ${{ github.actor == 'renovate[bot]' }}
-    name: Update artifact files for renovate[bot]
+    name: Renovate post install
     runs-on: macos-latest
-    permissions:
-      contents: write
     steps:
+      - name: Generate token
+        id: generate-token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.GH_APP_ID }}
+          private_key: ${{ secrets.GH_APPS_PRIVATE_KEY_PEM }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
+          token: ${{ steps.generate-token.outputs.token }}
+      - name: Generate .env file
+        run: |
+          echo "${{ secrets.ENV }}" > fastlane/.env
+      - name: Install Ruby, bundler, fastlane and other dependencies
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.3.0
+          bundler-cache: true
+      - name: Update PR title
+        run: bundle exec fastlane addJiraTicketToPullRequestTitle issue_id:"${{ github.event.pull_request.number }}" token:"${{ steps.generate-token.outputs.token }}" origin_title:"${{ github.event.pull_request.title }}"
       - name: Pod install
+        if: contains(join(github.event.pull_request.labels.*.name, ' '), 'cocoapods')
         run: pod install
       - name: Auto commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update artifact files
           file_pattern: 'Podfile*'
-  ci-ios:
-    needs: update-artifact-files
-    permissions:
-      contents: read
-      pull-requests: write
-    uses: ./.github/workflows/ci_ios.yml
-
-  ci_pr:
-    needs: ci-ios
-    permissions:
-      contents: read
-      issues: read
-      pull-requests: write
-      statuses: write
-    uses: ./.github/workflows/ci_pr.yml

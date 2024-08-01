@@ -1,0 +1,79 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+private_lane :updatePullRequestTitle do |options|
+  token = options[:token]
+  pull_request_id = options[:pull_request_id]
+  title = options[:title]
+
+  request_body = {
+    'title' => title
+  }
+  github_api(
+    api_bearer: token,
+    http_method: 'PATCH',
+    body: request_body,
+    path: "/repos/thanhfnx-org/TestRenovate/issues/#{pull_request_id}"
+  )
+end
+
+private_lane :issueComments do |options|
+  token = options[:token]
+  issue_id = options[:issue_id]
+
+  response = github_api(
+    api_bearer: token,
+    http_method: 'GET',
+    path: "/repos/thanhfnx-org/TestRenovate/issues/#{issue_id}/comments"
+  )
+
+  response[:json]
+end
+
+lane :addJiraTicketToPullRequestTitle do |options|
+  origin_title = options[:origin_title]
+  all_comments = issueComments(
+    token: options[:token],
+    issue_id: options[:issue_id]
+  )
+  pattern = /(?<=This PR is linked to https:\/\/elgana\.atlassian\.net\/browse\/).*(?= \.)/
+  created_jira_issue_comment = all_comments
+    .map { |comment| comment["body"] }
+    .find { |body| body.match(pattern) }
+  next if created_jira_issue_comment.nil?
+  created_jira_key = created_jira_issue_comment.match(pattern)[0]
+  jira_tag = "[Build][#{created_jira_key}]"
+
+  next if origin_title.include?(jira_tag)
+  
+  updatePullRequestTitle(
+    token: options[:token],
+    pull_request_id: options[:issue_id],
+    title: "#{jira_tag} #{origin_title}"
+  )
+end
+
+lane :addIssueComment do |options|
+  token = options[:token]
+  pull_request_id = options[:pull_request_id]
+  comment = options[:comment]
+
+  request_body = {
+    'body' => comment
+  }
+  github_api(
+    api_bearer: token,
+    http_method: 'POST',
+    body: request_body,
+    path: "/repos/thanhfnx-org/TestRenovate/issues/#{pull_request_id}/comments"
+  )
+end

@@ -1,6 +1,45 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+  "enabledManagers": [
+    "circleci",
+    "cocoapods"
+  ],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchManagers": ["circleci"],
+      "addLabels": ["circle_ci"]
+    },
+    {
+      "matchManagers": ["cocoapods"],
+      "addLabels": ["cocoapods"]
+    },
+    {
+      "matchPackagePatterns": ["RxSwift", "RxCocoa"],
+      "groupName": "Rx Dependencies",
+      "commitMessageAction": "Update",
+      "commitMessageTopic": "{{groupName}}",
+      "commitMessageExtra": "to v{{toVersion}}"
+    },
+    {
+      "matchPackagePatterns": ["FirebaseRemoteConfig", "FirebaseInstallations"],
+      "groupName": "Firebase Dependencies",
+      "commitMessageAction": "Update",
+      "commitMessageTopic": "{{groupName}}",
+      "commitMessageExtra": "to v{{toVersion}}"
+    },
+    {
+      "matchPackagePatterns": ["Swinject", "SwinjectStoryboard"],
+      "groupName": "Swinject Dependencies",
+      "commitMessageAction": "Update",
+      "commitMessageTopic": "{{groupName}}",
+      "commitMessageExtra": "to v{{toVersion}}"
+    }
+  ],
+  "rangeStrategy": "pin",
+  "rebaseWhen": "auto",
+  "recreateWhen": "always",
+  "commitMessageAction": "Update",
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "to v{{toVersion}}"
 }
