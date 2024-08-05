@@ -39,6 +39,17 @@ private_lane :issueComments do |options|
   response[:json]
 end
 
+private_lane :deleteIssueComment do |options|
+  token = options[:token]
+  comment_id = options[:comment_id]
+
+  github_api(
+    api_bearer: token,
+    http_method: 'DELETE',
+    path: "/repos/thanhfnx-org/TestRenovate/issues/comments/#{comment_id}"
+  )
+end
+
 lane :addJiraTicketToPullRequestTitle do |options|
   origin_title = options[:origin_title]
   all_comments = issueComments(
@@ -77,3 +88,31 @@ lane :addIssueComment do |options|
     path: "/repos/thanhfnx-org/TestRenovate/issues/#{pull_request_id}/comments"
   )
 end
+
+  desc 'Remove unnecessary comments by renovate[bot] when running pod install failed.'
+  lane :removeUnnecessaryRenovateComments do |options|
+    github_token = options[:github_token]
+    pull_request_id = options[:pr_id]
+
+    all_comments = issueComments(
+      token: github_token,
+      issue_id: pull_request_id
+    )
+
+    unnecessary_body_patterns = [
+      'Artifact update problem',
+      'Edited/Blocked Notification'
+    ]
+
+    all_comments.each do |comment|
+      next unless unnecessary_body_patterns.any? do |text|
+                    comment['body'].include?(text)
+                  end && comment['user']['login'] == 'renovate[bot]'
+
+      puts "Deleting comment id: #{comment['id']} by #{comment['user']['login']}"
+      deleteIssueComment(
+        token: github_token,
+        comment_id: comment['id']
+      )
+    end
+  end
