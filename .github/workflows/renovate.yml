@@ -42,3 +42,5 @@ jobs:
         with:
           commit_message: Update artifact files
           file_pattern: 'Podfile*'
+      - name: Remove unnecessary comment by renovate[bot]
+        run: bundle exec fastlane removeUnnecessaryRenovateComments pr_id:"${{ github.event.pull_request.number }}" token:"${{ steps.generate-token.outputs.token }}"
