@@ -1,0 +1,28 @@
+name: Tool / When PR closed
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  trigger-nightly-build:
+    name: Trigger nightly build when PR is merged and tagged 'auto-build' label
+    if: github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'auto-build')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger CircleCI workflow
+        run: |
+          curl -u ${CIRCLECI_TOKEN}: \
+              -X POST \
+              -H "Content-Type: application/json" \
+              -d '{
+                    "branch": "main",
+                    "parameters": {
+                      "run-nightly-build": true
+                    }
+                  }' \
+              https://circleci.com/api/v2/project/github/ntt-elgana/elgana-renewal-ios/pipeline
+        env:
+          CIRCLECI_TOKEN: ${{ secrets.CIRCLECI_TOKEN }}
