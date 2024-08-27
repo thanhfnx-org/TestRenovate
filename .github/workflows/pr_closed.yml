@@ -18,7 +18,6 @@ jobs:
               -X POST \
               -H "Content-Type: application/json" \
               -d '{
-                    "branch": "main",
                     "parameters": {
                       "run-nightly-build": true
                     }
