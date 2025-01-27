@@ -33,7 +33,7 @@ target 'TestRenovate' do
   pod 'Periphery', '2.18.0'
   pod 'FirebaseRemoteConfig', '10.28.0'
   pod 'FirebaseInstallations', '10.28.0'
-  pod 'GooglePlaces', '8.1.0'
+  pod 'GooglePlaces', '9.3.0'
   pod 'GoogleMaps', '8.4.0'
   pod 'GRDB.swift/SQLCipher', '6.24.1'
 end
